@@ -90,4 +90,40 @@ for word in words:
 
 print(f"New list: {uppercase_words}")
 
+#Processing real data
+
+print("\n\n PROCESSING REAL DATA")
+
+print("Let's process some realistic data!")
+ #STUDENTS DATA
+students_data = [
+     {"name": "Alice", "grade": 89},
+     {"name": "Bankole", "grade": 72},
+     {"name": "Cole", "grade": 94},
+     {"name": "Daphane", "grade": 98},
+     {"name": "Emmanuel", "grade": 67}
+ ]
+
+print("\nStudent Grade Report")
+
+total_score = 0
+honor_students = []
+
+for student in students_data:
+    name = student ["name"]
+    grade = student ["grade"]
+
+    #Add total
+    total_score += grade
+    #Check for honor
+    if grade >= 90:
+        honor_students.append(name)
+        status = "Honor Roll!"
+    elif grade >= 80:
+        status = "Good Standing"
+    else:
+        status = "Need Improvement"
+    print(f"{name}: {grade}% {status}")
+
+
 
