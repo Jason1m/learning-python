@@ -120,10 +120,58 @@ for student in students_data:
         honor_students.append(name)
         status = "Honor Roll!"
     elif grade >= 80:
+        honor_students.append(name)
         status = "Good Standing"
     else:
+        honor_students.append(name)
         status = "Need Improvement"
     print(f"{name}: {grade}% {status}")
 
+#Calculate and display summary
+average = total_score / len(students_data)
+print(f"\nClass Summary")
+print(f"Average grade: {average:.1f}%")
+print(f"Honor Roll Students: {','.join(honor_students)}")
 
+#INVENTORY PROCESSING
+print("\n\nInventory Processing Example")
+print("-" * 40)
 
+inventory = [
+    {"item": "Laptop", "quantity": 5, "price": 999.99},
+    {"item": "Mouse", "quantity": 10, "price": 64.99},
+    {"item": "Keyboard", "quantity": 6, "price": 83.99},
+    {"item": "Monitor", "quantity": 7, "price": 392.99},
+    {"item": "Headphone", "quantity": 4, "price": 59.99}
+]
+
+total_value = 0
+low_stock_items = []
+expensive_items = []
+
+for product in inventory:
+    item_name = product ["item"]
+    qty = product ["quantity"]
+    price = product ["price"]
+
+    #Calculate item value
+    item_value = qty * price
+    total_value += item_value
+
+    #Check for low stock
+    if qty < 10:
+        low_stock_items.append(item_name)
+    #Check for expensive items
+    if price > 100:
+        expensive_items.append(item_name)
+
+    #Display item info
+    print(f"{item_name:<12}: {qty:>3}units x ${price:>7.2f} = ${item_value:>8.2f}")
+
+print("=" * 40)
+print(f"Total Inventory Value: ${total_value:,.2f}")
+
+if low_stock_items:
+    print(f"Low Stock Alert: {','.join(low_stock_items)}")
+    
+print(f"High Value Items: {','.join(expensive_items)}")
