@@ -175,3 +175,29 @@ if low_stock_items:
     print(f"Low Stock Alert: {','.join(low_stock_items)}")
     
 print(f"High Value Items: {','.join(expensive_items)}")
+
+#NESTED LOOP
+print("\n\nNested loop")
+print("Simple Multiplication Table (1-6)")
+for i in range(1,7):
+    for j in range(1,7):
+        result = i * j
+        print(f"{i} x {j} = {result:2d}", end="   ")
+    print() #New Line
+
+print("\n" + "="*50)
+
+#PROCESSING 2D DATA
+departments = [
+    {"name": "Sales", "employees": ["Alice", "Bob", "Charlie"]},
+    {"name": "Engineering", "employees": ["Ade", "Bobola", "Charles"]},
+    {"name": "Marketing", "employees": ["Ayo", "Bimbo", "Chris"]}
+]
+print("Company Directory:")
+for dept in departments:
+    dept_name = dept["name"]
+    employees = dept["employees"]
+
+    print(f"\n{dept_name} Department: ")
+    for employee in employees:
+        print(f" {employee}")
