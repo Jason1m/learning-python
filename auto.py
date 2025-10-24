@@ -201,3 +201,27 @@ for dept in departments:
     print(f"\n{dept_name} Department: ")
     for employee in employees:
         print(f" {employee}")
+
+#PERFORMANCE EXAMPLES
+print("\n\n The Power of Automation")
+print("=" * 40)
+
+print("Let's see how powerful loops can be")
+
+import time 
+
+large_dataset = list(range(1000))
+print(f"Processing {len(large_dataset)} items...")
+
+start_time = time.time()
+processed_count = 0
+for number in large_dataset:
+    #simulate some processing 
+    if number % 2 == 0:
+        processed_count += 1
+end_time = time.time()
+processing_time = end_time - start_time
+
+print(f"Processed {len(large_dataset)} items in {processing_time:.4f} seconds!")
+print(f"Found {processed_count} even numbers")
+print(f"Imagine doing this manually")
